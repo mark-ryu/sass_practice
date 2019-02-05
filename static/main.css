@@ -3,7 +3,7 @@ body, html {
 }
 
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Montserrat';
   margin: 0;
 }
 
@@ -15,5 +15,129 @@ body #bg {
   height: 100%;
   position: absolute;
   z-index: -1;
+}
+
+@media (min-width: 840px) {
+  body #bg {
+    -webkit-clip-path: polygon(0 0, 81% 0, 55% 100%, 0% 100%);
+            clip-path: polygon(0 0, 81% 0, 55% 100%, 0% 100%);
+  }
+}
+
+body header a {
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem;
+  display: block;
+  text-transform: uppercase;
+}
+
+@media (min-width: 840px) {
+  body main {
+    display: -ms-grid;
+    display: grid;
+    grid-template-coloumns: 50vw auto;
+        grid-template-areas: "primary card";
+  }
+}
+
+body main section#card {
+  background: #fff;
+  padding: 1.5rem;
+  margin: 1em auto;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 80%;
+}
+
+@media (min-width: 840px) {
+  body main section#card {
+    grid-area: card;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin: 1em;
+  }
+}
+
+body main ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+body main ul li {
+  margin-bottom: 10px;
+}
+
+body main ul li span {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #ccdfff;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+body main ul li strong {
+  display: inline-block;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+body section#primary {
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 840px) {
+  body section#primary {
+    grid-area: primary;
+    text-align: left;
+    margin: 4em 0 0 4em;
+  }
+}
+
+body section#primary h1 {
+  font-size: 3em;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 840px) {
+  body section#primary h1 {
+    width: 30%;
+    font-size: 4em;
+    line-height: .9em;
+  }
+}
+
+body section#primary p {
+  font-size: 1.4em;
+}
+
+body section#primary a {
+  color: #001333;
+  border-radius: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #fff6bb;
+  display: block;
+  text-align: center;
+  margin: 50px auto 0 auto;
+  padding: 1rem;
+}
+
+@media (min-width: 840px) {
+  body section#primary a {
+    display: inline-block;
+    padding: 1rem 4rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */
