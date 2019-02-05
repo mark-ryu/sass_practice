@@ -4,16 +4,13 @@ $colors: (
     primary-dark: darken(#005dff, 40%),
     accent: #fff6bb
 );
-
-$padding: 1rem;
-$border: 1rem;
-
 @function color($color-name) {
     @return map-get($colors, $color-name)
 }
 
+$padding: 1rem;
+$border: 1rem;
 $desktop: 840px;
-
 @mixin desktop {
     @media (min-width: #{$desktop}) {
         @content;
@@ -67,6 +64,7 @@ body {
             box-shadow: 0 10px 30px rgba($color: #000000, $alpha: 0.2);
             width: 80%;
 
+            // media query for the desktop
             @include desktop {
                 grid-area: card;
                 height: fit-content;
@@ -105,6 +103,7 @@ body {
         padding: $padding;
         text-align: center;
 
+        // media query for the desktop
         @include desktop {
             grid-area: primary;
             text-align: left;
@@ -116,6 +115,7 @@ body {
             margin-top: 10px;
             text-transform: uppercase;
 
+            // media query for the desktop
             @include desktop {
                 width: 30%;
                 font-size: 4em;
@@ -139,6 +139,7 @@ body {
             margin: 50px auto 0 auto;
             padding: $padding;
 
+            // media query for the desktop
             @include desktop {
                 display: inline-block;
                 padding: $padding $padding * 4;
