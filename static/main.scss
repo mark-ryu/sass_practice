@@ -1,21 +1,29 @@
+// colors is like the declaration for mapping
 $colors: (
     primary: #005dff,
     primary-light: lighten(#005dff, 40%),
     primary-dark: darken(#005dff, 40%),
     accent: #fff6bb
 );
+
+// function is used for easier calling of the mapped variables
+// it works like this color(value_mapped)
+// basically works like a function
 @function color($color-name) {
     @return map-get($colors, $color-name)
 }
 
 $padding: 1rem;
 $border: 1rem;
+// variable desktop is used for the mixin
+// mixin works like media queries
 $desktop: 840px;
 @mixin desktop {
     @media (min-width: #{$desktop}) {
         @content;
     }
 }
+
 
 body, html {
     height: 100%;
@@ -33,11 +41,13 @@ body {
         position: absolute;
         z-index: -1;
 
+        // media query for the desktop
         @include desktop {
             clip-path: polygon(0 0, 81% 0, 55% 100%, 0% 100%);
         }
     }
     
+    // $padding is used as a variable
     header a {
         color: #fff;
         text-decoration: none;
@@ -46,9 +56,10 @@ body {
         text-transform: uppercase;
     }
 
-
     main {
 
+        // grid-template-areas are primary and card. 50vw and auto.
+        // media query for the desktop
         @include desktop {
             display: grid;
             grid-template-coloumns: 50vw auto;
@@ -56,6 +67,7 @@ body {
                 "primary card";
         }
 
+        // $border as a variable
         section#card {
             background: #fff;
             padding: 1.5rem;
